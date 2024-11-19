@@ -1,0 +1,38 @@
+name: Automated beta builds
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
+    - name: Grant Execute Permissions for Gradlew
+      run: chmod +x ./gradlew
+
+    - name: Build
+      run: ./gradlew build
+
+    - name: Publish artifacts
+      uses: DrTheodor/discord-webhook-upload-action@v1.2
+      with:
+        url: ${{ secrets.DEV_BUILDS }}
+        file: 'build/libs/*'
+        username: cock master 43473d43 
+        avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
+        commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
+        message: |
+          <:new1:1253371736510959636><:new2:1253371805734015006> New `Temporal Continuum Unbound` dev build `#${{ github.run_number }}`:
+          %COMMITS%
