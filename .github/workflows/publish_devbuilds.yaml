@@ -34,5 +34,5 @@ jobs:
         avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
         commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
         message: |
-          <@1308329623914020904><@1308329104059400274><:new1:1253371736510959636><:new2:1253371805734015006> New `Temporal Continuum Unbound` dev build `#${{ github.run_number }}`:
+          <@&1308329623914020904><@&1308329104059400274><:new1:1253371736510959636><:new2:1253371805734015006> New `Temporal Continuum Unbound` dev build `#${{ github.run_number }}`:
           %COMMITS%
