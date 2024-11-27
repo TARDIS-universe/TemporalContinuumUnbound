@@ -2,10 +2,12 @@
 	"schemaVersion": 1,
 	"id": "tcu",
 	"version": "${version}",
+	"accessWidener" : "tcu.accesswidener",
 	"name": "TCU",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "TCU Adds TARDISes and stuff",
 	"authors": [
-		"Me!"
+		"The DJ Himself!",
+		"Codiak540"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
