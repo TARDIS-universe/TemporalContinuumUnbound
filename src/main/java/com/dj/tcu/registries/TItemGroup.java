@@ -103,22 +103,4 @@ public class TItemGroup {
             itemGroup.accept(item);
         });
     }
-
-    public static boolean GetAnnotation(Class<?> parent, Class<? extends Annotation> annotationClass) {
-//        return Stream.of(parent.getDeclaredFields())
-//                .filter(field -> field.isAnnotationPresent(annotationClass.asSubclass(Annotation.class)))
-//                .map(field -> {
-//                    // Access the annotation
-//                    Annotation annotation = field.getAnnotation(annotationClass);
-//                    // Pair the instance with its annotation in a Map.Entry
-//                    try {
-//                        return new AbstractMap.SimpleEntry<>((Item) field.get(null), annotation);
-//                    } catch (IllegalAccessException e) {
-//                        LOGGER.info("WE GOT AN IllegalAccessException IN THE TItemGroup#GetAnnotation");
-//                        return null;
-//                    }
-//                })
-//                .collect(Collectors.toCollection(Boolean::new));
-            return Arrays.stream(parent.getDeclaredFields()).toList().contains(annotationClass);
-    }
 }

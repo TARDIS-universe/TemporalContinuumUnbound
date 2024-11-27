@@ -39,7 +39,7 @@ public class TBlocks {
     public static final Block TEST_NO_ITEM;
 
     static {
-        TEST_BLOCK = register(new Block(BlockBehaviour.Properties.of()), "test");
+        TEST_BLOCK = register(new Block(BlockBehaviour.Properties.of()), "test_block");
         TEST_NO_ITEM = register(new Block(BlockBehaviour.Properties.of()), "test_no_item");
     }
 
